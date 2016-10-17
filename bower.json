@@ -1,31 +1,20 @@
 {
-	"name": "gestion-almacen",
+	"name": "introductron",
+	"productName": "Introductron",
 	"version": "1.0.0",
-	"author": "Oficina de Software Libre de la Universidad de Granada <osl@ugr.es> (http://osl.ugr.es/)",
-	"contributors": [
-		"Germán Martínez Maldonado <germaaan@gmail.com>"
-	],
-	"description": "Gestión del material informático proveniente de las donaciones",
-	"keywords": [
-		"gestion",
-		"almacen",
-		"inventario",
-		"donaciones"
-	],
-	"bugs": {
-		"url": "https://github.com/oslugr/gestionAlmacen/issues"
-	},
-	"main": "app.js",
+	"description": "Aplicación de prueba del framework Electron",
 	"license": "GPL-3.0",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/oslugr/gestionAlmacen.git"
+	"repository": "germaaan/introductron",
+	"author": {
+		"name": "German Martinez",
+		"email": "germaaan@gmail.com",
+		"url": "germaaan.github.io"
 	},
-	"os": [
-		"linux"
+	"keywords": [
+		"electron-app",
+		"electron"
 	],
-	"homepage": "https://github.com/oslugr/gestionAlmacen#readme",
-	"private": false,
+	"private": true,
 	"dependencies": {
 		"bootstrap": "bootstrap-sass-official#3.3.5",
 		"jquery": "jquery#2.1.4"

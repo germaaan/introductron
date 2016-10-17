@@ -19,6 +19,7 @@
 		"electron-app",
 		"electron"
 	],
+	"private": true,
 	"dependencies": {
 		"body-parser": "^1.15.0",
 		"cookie-parser": "^1.4.0",
