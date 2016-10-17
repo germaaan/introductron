@@ -1,2 +1,18 @@
+# Directorio instalación módulos
 node_modules
+
+# Directorio de aplicación generada
 /dist
+
+# Directorio de pruebas
+/prueba
+
+# Directorio de librerías instaladas
+public/lib/vendor
+
+# Directorio de hojas de estilo CSS generadas
+public/style/css
+
+# Logs y copias de seguridad
+*.log
+*~

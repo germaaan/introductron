@@ -1,4 +1,6 @@
 'use strict';
+var fs = require('fs');
+
 const electron = require('electron');
 
 const app = electron.app;
@@ -15,12 +17,23 @@ function onClosed() {
 	mainWindow = null;
 }
 
+function saveFile() {
+	fs.writeFile("prueba.txt", "Hey there!", function(err) {
+		if (err) {
+			return console.log(err);
+		}
+
+		console.log("The file was saved!");
+	});
+}
+
 function createMainWindow() {
 	const win = new electron.BrowserWindow({
-		width: 600,
-		height: 400
+		width: 800,
+		height: 600
 	});
 
+	saveFile();
 	win.loadURL(`file://${__dirname}/index.html`);
 	win.on('closed', onClosed);
 

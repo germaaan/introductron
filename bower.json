@@ -1,0 +1,33 @@
+{
+	"name": "gestion-almacen",
+	"version": "1.0.0",
+	"author": "Oficina de Software Libre de la Universidad de Granada <osl@ugr.es> (http://osl.ugr.es/)",
+	"contributors": [
+		"Germán Martínez Maldonado <germaaan@gmail.com>"
+	],
+	"description": "Gestión del material informático proveniente de las donaciones",
+	"keywords": [
+		"gestion",
+		"almacen",
+		"inventario",
+		"donaciones"
+	],
+	"bugs": {
+		"url": "https://github.com/oslugr/gestionAlmacen/issues"
+	},
+	"main": "app.js",
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/oslugr/gestionAlmacen.git"
+	},
+	"os": [
+		"linux"
+	],
+	"homepage": "https://github.com/oslugr/gestionAlmacen#readme",
+	"private": false,
+	"dependencies": {
+		"bootstrap": "bootstrap-sass-official#3.3.5",
+		"jquery": "jquery#2.1.4"
+	}
+}
