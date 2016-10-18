@@ -1,12 +1,14 @@
 'use strict';
-var fs = require('fs');
 
 const electron = require('electron');
+const cp = require('child_process');
 
 const app = electron.app;
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
+
+let instance = cp.spawn('node', ['./app'])
 
 // prevent window being garbage collected
 let mainWindow;
@@ -17,24 +19,16 @@ function onClosed() {
 	mainWindow = null;
 }
 
-function saveFile() {
-	fs.writeFile("prueba.txt", "Hey there!", function(err) {
-		if (err) {
-			return console.log(err);
-		}
-
-		console.log("The file was saved!");
-	});
-}
-
 function createMainWindow() {
 	const win = new electron.BrowserWindow({
 		width: 800,
-		height: 600
+		height: 600,
+		autoHideMenuBar: true,
+		useContentSize: true,
+		resizable: false,
 	});
 
-	saveFile();
-	win.loadURL(`file://${__dirname}/index.html`);
+	win.loadURL('http://localhost:3000/');
 	win.on('closed', onClosed);
 
 	return win;

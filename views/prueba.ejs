@@ -1,14 +1,27 @@
 <% include layout %>
 
-    <script src="/js/prueba.js"></script>
-    <div class="col-md-8 col-md-offset-2 text-center">
-        <h2>Escribe algún comentario de prueba</h2>
-        <form class="form-horizonta" id="envioComentarios" role="form">
-            <div class="col-xs-12 form-group"><textarea class="form-control" id="comentarios" style="resize: none" rows="4" cols="50" name="comentarios"></textarea></div>
-            <div class="col-xs-12" style="height:10px"></div>
-            <input class="btn btn-default" id="enviarComentarios" type="submit" value="Enviar comentarios" />
-        </form>
-    </div>
-    </div>
-    </div>
-    </body>
+	<div class="col-md-8 col-md-offset-2 text-center">
+		<h2>Escribe algo para copiarlo al otro cuadro:</h2>
+
+		<div class="col-xs-12 form-group">
+			<textarea class="form-control" id="comentarios" style="resize: none" rows="4" cols="50" name="comentarios"></textarea>
+		</div>
+
+		<div class="col-xs-12" style="height:10px"></div>
+		<button onclick="copiar()">Copiar</button>
+
+		<div class="col-xs-12" style="height:30px"></div>
+		<div class="col-xs-12 form-group">
+			<textarea class="form-control" id="oculto" style="resize: none" rows="4" cols="50" name="oculto" readonly></textarea>
+		</div>
+
+		<script>
+			function copiar() {
+				document.getElementById("oculto").value = document.getElementById("comentarios").value;
+			}
+		</script>
+	</div>
+	</div>
+	</div>
+
+	</body>

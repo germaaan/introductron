@@ -4,9 +4,6 @@ node_modules
 # Directorio de aplicación generada
 /dist
 
-# Directorio de pruebas
-/prueba
-
 # Directorio de librerías instaladas
 public/lib/vendor
 

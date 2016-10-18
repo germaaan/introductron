@@ -16,7 +16,6 @@
 	],
 	"private": true,
 	"dependencies": {
-		"bootstrap": "bootstrap-sass-official#3.3.5",
-		"jquery": "jquery#2.1.4"
+		"bootstrap": "bootstrap-sass-official#3.3.5"
 	}
 }
