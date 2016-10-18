@@ -23,3 +23,7 @@ npm start
 ```
 npm run build
 ```
+
+### Presentación
+
+Una pequeña presentación de Electron está [aquí](https://germaaan.github.io/introductron/).
