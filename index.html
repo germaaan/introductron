@@ -23,12 +23,12 @@
     </script>
 
     <style media="screen" type="text/css">
-      .reveal section img {
-        vertical-align: middle;
-        background:none;
-        border:none;
-        box-shadow:none;
-      }
+        .reveal section img {
+            vertical-align: middle;
+            background: none;
+            border: none;
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -36,35 +36,94 @@
     <div class="reveal">
         <div class="slides">
             <section>
-							<h3>Introductron: Introducción al framework Electron</h3>
-							<p style="line-height: 43%">
-								<font size="4">
-									<i style="font-size: 25px;">Germán Martínez Maldonado</i>
-									<br/>
-									(<strong>GitHub</strong>: <a href="https://github.com/germaaan"> @germaaan</a> /
-									<strong>Twitter</strong>: <a href="https://twitter.com/germaaan_">@germaaan_</a>)
-									<br/><br/><i style="font-size: 25px;">Oficina de Software Libre de la Universidad de Granada</i>
-									<br/>(<strong>Twitter</strong>: <a href="https://twitter.com/OSLUGR">@OSLUGR</a> /
-									<strong>Facebook</strong>: <a href="https://www.facebook.com/SoftwareLibreUGR">@SoftwareLibreUGR</a>)
-									<br/><br/><i style="font-size: 25px;">Granada Geek</i>
-									<br/>(<a href="http://www.meetup.com/es-ES/Granada-Geek/">http://www.meetup.com/es-ES/Granada-Geek/</a>)
-								</font>
-								<br/>
-								<img alt="image" src="images/electron.png" height="270" />
-								<br/>
-								<img alt="image" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-							</p>
+                <h3>Introductron: Introducción al framework Electron</h3>
+                <p style="line-height: 43%">
+                    <font size="4">
+                        <i style="font-size: 25px;">Germán Martínez Maldonado</i>
+                        <br/> (
+                        <strong>GitHub</strong>: <a href="https://github.com/germaaan"> @germaaan</a> /
+                        <strong>Twitter</strong>: <a href="https://twitter.com/germaaan_">@germaaan_</a>)
+                        <br/><br/><i style="font-size: 25px;">Oficina de Software Libre de la Universidad de Granada</i>
+                        <br/>(<strong>Twitter</strong>: <a href="https://twitter.com/OSLUGR">@OSLUGR</a> /
+                        <strong>Facebook</strong>: <a href="https://www.facebook.com/SoftwareLibreUGR">@SoftwareLibreUGR</a>)
+                        <br/><br/><i style="font-size: 25px;">Granada Geek</i>
+                        <br/>(<a href="http://www.meetup.com/es-ES/Granada-Geek/">http://www.meetup.com/es-ES/Granada-Geek/</a>)
+                        <br/><br/><i style="font-size: 25px;">BeerJS</i>
+                        <br/>(<a href="https://github.com/beerjs/granada">https://github.com/beerjs/granada</a>)
+                    </font>
+                    <br/>
+                    <img alt="image" src="images/electron.png" height="250" />
+                    <br/>
+                    <img alt="image" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+                </p>
             </section>
             <section>
-              <section>
-                <h3>¿Qué es Electron?</h3>
-                <img alt="image" src="images/electron.png"/>
-              </section>
+                <section>
+                    <h3>¿Qué es Electron?</h3>
+                    <img alt="image" src="images/electron.png" />
+                    <p class="fragment">
+                        Un framework para crear aplicaciones de escritorio nativas con tecnologías web como JavaScript, HTML y CSS.
+                    </p>
+                </section>
+                <section>
+                    <h3>¿Qué necesito saber?</h3>
+                    <ul>
+                        <li class="fragment">Node.js (JavaScript)</li>
+                        <li class="fragment">HTML/CSS</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>¿Qué es Node.js?</h3>
+                    <ul>
+                        <li class="fragment">Un entorno de ejecución multiplataforma para JavaScript construido con el motor de JavaScript V8 de Chrome</li>
+                        <li class="fragment">Es código abierto</li>
+                        <li class="fragment">Orientado a servidor (pero no solo usado en él)</li>
+                        <li class="fragment">Es asíncrono y con un modelo de operaciones de E/S sin bloqueo y orientado a eventos</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>¿Cómo funciona Electron?</h3>
+                    <ul>
+                        <li class="fragment">Usando Node.js y un subconjunto mínimo de librerías de Chromium</li>
+                        <li class="fragment">La interfaz de la aplicación es simplemente HTML/CSS</li>
+                        <li class="fragment">Una vez realizada la aplicación, se genera el ejecutable para cualquier plataforma que queramos</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>¿Cómo funciona Electron? (internamente)</h3>
+                    <ul>
+                        <li class="fragment">Tenemos un proceso principal, que es nuestra aplicación</li>
+                        <li class="fragment">También tenemos un proceso renderizador, que usa la arquitectura multiproceso de Chromium</li>
+                        <li class="fragment">Cada página web es un proceso independiente</li>
+                        <li class="fragment">El proceso principal controla todas las páginas web y sus procesos de renderizado</li>
+                        <li class="fragment">Ventaja: las páginas web no tienen acceso a recursos nativos, sin embargo, con Electron podemos usar el API de Node.js, lo que nos permite interactuar a un nivel más bajo.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>¿Cómo funciona Electron? (funcionalmente)</h3>
+                    <ul>
+                        <li class="fragment">En la aplicación principal se crean instancias <strong>BrowserWindow</strong></li>
+                        <li class="fragment">Esa instancia es nuestra ventana de la interfaz, nuestro proceso renderizar que carga una página</li>
+                        <li class="fragment">Programación orientada a eventos:
+                            <ul>
+                                <li> electron.app.on('ready', () => { ... });</li>
+                                <li> electron.BrowserWindow.on('closed', onClosed);</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>¿Cómo lo pongo en marcha?</h3>
+                    <ul>
+                        <li class="fragment"><strong>Ejecutar</strong>: electron .</li>
+                        <li class="fragment"><strong>Construir: electron-packager . --out=dist --asar --linux64</strong></li>
+                    </ul>
+                </section>
             </section>
 
-      <section>
-        <h2>¿Preguntas?</h2>
-      </section>
+            <section>
+                <h2>¿Preguntas?</h2>
+            </section>
         </div>
     </div>
 
